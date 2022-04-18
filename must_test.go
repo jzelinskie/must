@@ -14,3 +14,14 @@ func ExampleBeOk() {
 	// Output:
 	// 127.0.0.1
 }
+
+func ExampleGetFromMap() {
+	bookmarks := map[string]string{
+		"home": "https://duckduckgo.com",
+	}
+
+	fmt.Println(must.GetFromMap(bookmarks, "home"))
+
+	// Output:
+	// https://duckduckgo.com
+}

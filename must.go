@@ -19,6 +19,12 @@ func NotBeOk[T any](v T, ok bool) T {
 	return v
 }
 
+// MustGetFromMap panics if the key is not in the provided map.
+func GetFromMap[T comparable, Y any](gmap map[T]Y, key T) Y {
+	v, ok := gmap[key]
+	return BeOk(v, ok)
+}
+
 // BeOne panics if the slice does not have only one element.
 func BeOne[T any](v []T) T {
 	if len(v) != 1 {
