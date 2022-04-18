@@ -19,6 +19,14 @@ func NotBeOk[T any](v T, ok bool) T {
 	return v
 }
 
+// BeOne panics if the slice does not have only one element.
+func BeOne[T any](v []T) T {
+	if len(v) != 1 {
+		panic("must be slice with only one element")
+	}
+	return v[0]
+}
+
 // NotError panics if err is not equal to nil.
 func NotError[T any](v T, err error) T {
 	if err != nil {
